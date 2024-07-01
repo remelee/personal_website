@@ -27,7 +27,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className = "text-center"> Hi, I'm Rebecca Lee </div>
+      <div className = "text-center"> Hi, I&apos;m Rebecca Lee </div>
 
 
 

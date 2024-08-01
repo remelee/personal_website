@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
     return(
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+      <div className="flex fixed-left-0 top-0 w-full max-w-5xl items-center justify-between">
         <Link href="/">
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
@@ -15,11 +15,10 @@ export default function Header() {
         />
         </Link>
         
-        <p className="fixed left-0 top-0 flex w-full border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-        <Link href="/about">About&nbsp;</Link>
-        <Link href="/portfolio">Portfolio&nbsp;</Link>
-        <Link href="/projects">Projects&nbsp;</Link>
-        <Link href="/contact">Contact</Link>
+        <p className="">
+        <Link className = "hover:text-amber-600 hover:font-bold" href="/about">About&nbsp;&nbsp;&nbsp;</Link>
+        <Link className = "hover:text-amber-600 hover:font-bold" href="/portfolio">Portfolio&nbsp;&nbsp;&nbsp;</Link>
+        <Link className = "hover:text-amber-600 hover:font-bold" href="/projects">Projects&nbsp;&nbsp;&nbsp;</Link>
         </p>
         </div>   
     )

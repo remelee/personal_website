@@ -1,5 +1,9 @@
 import Header from "../header";
 
 export default function Page() {
-    return (<div><Header/> <h1>Hello, portfolio page!</h1></div>);
+    return (
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Header/> <h1>Portfolio page under construction!</h1>
+      </div>
+      );
   }

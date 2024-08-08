@@ -16,6 +16,7 @@ export default function Header() {
         </Link>
         
         <p className="">
+        <Link className = "hover:text-amber-600 hover:font-bold" href="/">Home&nbsp;&nbsp;&nbsp;</Link>
         <Link className = "hover:text-amber-600 hover:font-bold" href="/about">About&nbsp;&nbsp;&nbsp;</Link>
         <Link className = "hover:text-amber-600 hover:font-bold" href="/portfolio">Portfolio&nbsp;&nbsp;&nbsp;</Link>
         <Link className = "hover:text-amber-600 hover:font-bold" href="/projects">Projects&nbsp;&nbsp;&nbsp;</Link>

@@ -9,23 +9,26 @@ const PROJECTS = [
     name: "Dementia detection model evaluation", 
     start: "Nov 2024", end: "Dec 2024", 
     slug: "dementia", 
-    skills: "python, tensorflow, scikit-learn, matplotlib", 
-    description: "Worked in a team of four to develop models predicting dementia using DementiaBank data, "
-    + "training logistic regression, SVM, feed-forward neural networks, and BERT models to examine how different"
-    + "models perform. I evaluated model performance through precision, recall, F1, and accuracy, and visualized it using Matplotlib", 
+    skills: "Python, TensorFlow, scikit-learn, Matplotlib, NLTK", 
+    description: "Worked in a team of four to develop models predicting dementia from transcriptions of people describing a picture. "
+    + "The data was labeled by whether the speaker had dementia. We trained and compared logistic regression, SVM, feed-forward neural networks, "
+    + "and BERT models, evaluating through precision, recall, F1, and accuracy. We then visualized it using Matplotlib."
+    + " We observed that a Bag of Words (BoW) embedding outperformed other approaches, supporting our hypothesis that dementia patients tend to "
+    + "be more repetitive, thus this can be effectively captured by BoW.", 
     image: "/dementiaStat.png" },
-  { id: "02", name: "Stock simulator", start: "Jun 2024", end: "Jun 2024", slug: "stock", skills: "java", 
+  { id: "02", name: "Stock simulator", start: "Jun 2024", end: "Jun 2024", slug: "stock", skills: "Java, APIs, File I/O, GUI/CLI development, MVC architecture", 
     description: "Developed a stock trading simulator in Java with CLI and GUI interfaces, with Alpha Vantage API integration following" 
-    + " an MVC architecture. Implemented real-time stock data retrieval allowing users to make transactions, as well as manage, save," 
-    + " and load a stock portfolio ", 
+    + " an MVC architecture. Implemented real-time stock data retrieval allowing users to make transactions, as well as capabilities to" 
+    + " manage, save, and load a stock portfolio.", 
     image: "/stock.png" },
   { id: "03", name: "Ocean awareness", start: "Feb 2024", end: "Feb 2024", slug: "ocean", 
     skills: "React, Typescript, SCSS, Next.js", 
-    description: "Participated in HackBeanpot and created a functional informational website about the oceans in under 48 hours with "
-    + "React, Typescript, SCSS, and Next.js. Built and deployed a dynamic frontend experience featuring smooth fade-in effects and scroll snapping", 
+    description: "Participated in HackBeanpot and created a functional informational website about the oceans in under 48 hours using "
+    + "React, Typescript, SCSS, and Next.js. Developed a dynamic frontend experience featuring smooth fade-in effects and scroll snapping"
+    + " to create an engaging user experience, and successfully deployed the site.", 
     image: "/oceans.png", 
     siteUrl: "https://ocean-awareness.vercel.app/" },
-  { id: "04", name: "Crescent", start: "Oct 2024", end: "Dec 2023", slug: "crescent", skills: "React, JavaScript, CSS, HTML", 
+  { id: "04", name: "Crescent", start: "Oct 2024", end: "Dec 2023", slug: "crescent", skills: "React, JavaScript, CSS, HTML, Firebase", 
     description: "Led frontend development to build a stylized website using React, JavaScript, CSS, and HTML that resembles popular" 
     + " dating apps with profile creation, swiping, and messaging features, as part of an Agile team. Incorporated Firebase for backend"
     + " storage and instant data synchronization of user profiles ", 
@@ -112,7 +115,7 @@ export default function ProjectsPage() {
 
             {/* Left Column: Image/Diagram */}
             <div className="w-1/2 border-r border-foreground/10 p-12 flex flex-col justify-center">
-              <h3 className="text-xl underline underline-offset-8 mb-8">Diagram of results:</h3>
+              <h3 className="text-xl underline underline-offset-8 mb-8">Results:</h3>
               
               <div className="bg-white p-4 rounded-sm relative">
                 {selectedProject.image ? (

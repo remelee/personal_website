@@ -1,3 +1,3 @@
-Accessable at https://rebeccalee.netlify.app/
+Accessible at https://rebeccalee.netlify.app/
 
 Currently in progress...

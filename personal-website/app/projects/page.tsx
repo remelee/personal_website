@@ -47,15 +47,15 @@ export default function ProjectsPage() {
       <Header />
 
       {/* 1. Skills Marquee Section */}
-      <div className="mt-52 border-t border-b border-foreground/20 py-2 overflow-hidden flex whitespace-nowrap">
+      <div className="mt-24 md:mt-52 border-t border-b border-foreground/20 py-2 overflow-hidden flex whitespace-nowrap">
         <div className="flex animate-marquee">
           {[0, 1, 2].map((i) => (
-            <span key={i} className="mx-4 text-sm tracking-widest uppercase text-[#3cd404]">
+            <span key={i} className="mx-2 md:mx-4 text-[10px] md:text-sm tracking-widest uppercase text-[#3cd404]">
               <span className="text-red-500 mr-2">SKILLS:</span>
               {SKILLS}
-              <span className="text-red-500 mr-2 ml-8">FRAMEWORKS AND LIBRARIES:</span>
+              <span className="text-red-500 mr-2 ml-4 md:ml-8">FRAMEWORKS AND LIBRARIES:</span>
               {FRAMEWORKS}
-              <span className="text-red-500 mr-2 ml-8">TECHNOLOGIES:</span>
+              <span className="text-red-500 mr-2 ml-4 md:ml-8">TECHNOLOGIES:</span>
               {TECH}
             </span>
           ))}
@@ -63,14 +63,14 @@ export default function ProjectsPage() {
       </div>
 
       {/* 2. Projects Table */}
-      <div className="max-w-6xl mx-auto px-6 mt-16 pb-24">
-        <div className="border border-foreground/30 rounded-sm overflow-hidden">
+      <div className="max-w-6xl mx-auto px-3 md:px-6 mt-12 md:mt-16 pb-24">
+        <div className="border border-foreground/30 rounded-sm overflow-x-auto">
           {/* Table Header */}
-          <div className="grid grid-cols-[60px_1fr_120px_120px_100px] gap-4 p-4 border-b border-foreground/30 text-xs text-foreground/60 tracking-tighter uppercase">
-            <span>ID</span>
+          <div className="grid grid-cols-[1fr_70px] md:grid-cols-[60px_1fr_120px_120px_100px] gap-2 md:gap-4 p-2 md:p-4 border-b border-foreground/30 text-[10px] md:text-xs text-foreground/60 tracking-tighter uppercase">
+            <span className="hidden md:inline">ID</span>
             <span>Project Name</span>
-            <span>Start Date</span>
-            <span>End Date</span>
+            <span className="hidden md:inline">Start Date</span>
+            <span className="hidden md:inline">End Date</span>
             <span className="text-center">View</span>
           </div>
 
@@ -78,17 +78,17 @@ export default function ProjectsPage() {
           {PROJECTS.map((project) => (
             <div 
               key={project.id} 
-              className="grid grid-cols-[60px_1fr_120px_120px_100px] gap-4 p-4 items-center border-b border-foreground/10 last:border-0 hover:bg-foreground/5 transition-colors"
+              className="grid grid-cols-[1fr_70px] md:grid-cols-[60px_1fr_120px_120px_100px] gap-2 md:gap-4 p-2 md:p-4 items-center border-b border-foreground/10 last:border-0 hover:bg-foreground/5 transition-colors"
             >
-              <span className="text-sm opacity-60">{project.id}</span>
-              <span className="text-sm uppercase tracking-tight">{project.name}</span>
-              <span className="text-sm">{project.start}</span>
-              <span className="text-sm">{project.end}</span>
+              <span className="text-[10px] md:text-sm opacity-60 hidden md:inline">{project.id}</span>
+              <span className="text-[10px] md:text-sm uppercase tracking-tight font-bold md:font-normal">{project.name}</span>
+              <span className="text-[10px] md:text-sm hidden md:inline">{project.start}</span>
+              <span className="text-[10px] md:text-sm hidden md:inline">{project.end}</span>
               
               <div className="flex justify-center">
                 <button 
                   onClick={() => setSelectedProject(project)}
-                  className="px-4 py-1 border border-foreground/40 rounded-full text-[10px] tracking-widest uppercase hover:bg-foreground hover:text-background transition-all"
+                  className="px-2 md:px-4 py-1 border border-foreground/40 rounded-full text-[8px] md:text-[10px] tracking-widest uppercase hover:bg-foreground hover:text-background transition-all touch-target"
                 >
                   Open
                 </button>
@@ -100,13 +100,14 @@ export default function ProjectsPage() {
 
       {/* 3. The Project Overlay (Modal) */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/20 backdrop-blur-sm p-4">
-          <div className="relative w-full max-w-6xl aspect-video bg-background border border-foreground/30 shadow-2xl flex overflow-hidden">
-            
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-2 md:p-4">
+          {/* Responsive modal: stacks on mobile, side-by-side on desktop */}
+          <div className="relative w-full max-w-6xl h-full max-h-[90vh] md:h-auto md:aspect-video bg-background border border-foreground/30 shadow-2xl flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
+          
             {/* Close Button */}
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 z-50 text-foreground/50 hover:text-foreground transition-colors"
+              className="absolute top-4 right-4 z-50 p-2 bg-background/80 rounded-full text-foreground/50 hover:text-foreground"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 6L6 18M6 6l12 12" />
@@ -114,7 +115,7 @@ export default function ProjectsPage() {
             </button>
 
             {/* Left Column: Image/Diagram */}
-            <div className="w-1/2 border-r border-foreground/10 p-12 flex flex-col justify-center">
+            <div className="w-full md:w-1/2 md:border-r border-foreground/10 border-b md:border-b-0 p-6 md:p-12 flex flex-col justify-center">
               <h3 className="text-xl underline underline-offset-8 mb-8">Results:</h3>
               
               <div className="bg-white p-4 rounded-sm relative">
@@ -138,7 +139,7 @@ export default function ProjectsPage() {
             </div>
 
             {/* Right Column: Info */}
-            <div className="w-1/2 p-12 overflow-y-auto">
+            <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto">
               <h2 className="text-4xl font-twinkle leading-tight mb-8">
                 {selectedProject.name}
               </h2>

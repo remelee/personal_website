@@ -14,23 +14,23 @@ export default function Header() {
 
   return (
     // The outer header stays full width and transparent
-    <header className="fixed left-0 top-0 z-50 w-full bg-background px-6">
+    <header className="fixed left-0 top-0 z-50 w-full bg-background px-4 md:px-6">
       <div className="
         max-w-7xl mx-auto 
         flex items-center justify-between
         border-t border-b border-foreground/20
-        h-32 
-        mt-6
+        py-4 md:py-6
+        mt-2 md:mt-4
       ">
         
         {/* Name */}
-        <Link className="text-5xl font-display pt-1" href="/">
+        <Link className="text-2xl md:text-5xl font-display" href="/">
           Rebecca Lee
         </Link>
         
         {/* Nav & Toggle */}
-        <div className="flex items-center gap-12">
-          <nav className="flex items-center gap-8 font-mono text-sm tracking-[0.2em]">
+        <div className="flex items-center gap-4 md:gap-12">
+          <nav className="flex items-center gap-4 md:gap-8 font-mono text-xs md:text-sm tracking-[0.2em]">
             <Link className="hover:text-[#349eeb] dark:hover:text-[#A3B9FF] transition-colors" href="/projects">
               Projects
             </Link>

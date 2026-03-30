@@ -46,22 +46,22 @@ __|          ;     |MM"MM"""""---..._______...--""MM"MM]                   |
     <main className="min-h-screen bg-background text-foreground font-mono relative overflow-hidden">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-12 pt-48 flex flex-col md:flex-row items-start justify-between gap-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-12 pt-24 md:pt-48 flex flex-col md:flex-row items-start justify-between gap-12 md:gap-20">
         
         {/* Left Side: Contact Info */}
-        <div className="flex-1 space-y-12 z-10">
+        <div className="flex-1 space-y-8 md:space-y-12 z-10 w-full">
           <div className="space-y-4">
-            <h2 className="text-xl opacity-80 uppercase tracking-[0.2em]">You can contact me via:</h2>
+            <h2 className="text-lg md:text-xl opacity-80 uppercase tracking-[0.2em]">You can contact me via:</h2>
             
             <div className="space-y-6">
               {/* LinkedIn */}
               <a 
                 href="https://linkedin.com/in/rebecca-megan-lee" 
                 target="_blank"
-                className="flex items-center gap-4 group cursor-pointer"
+                className="flex items-start md:items-center gap-3 md:gap-4 group cursor-pointer"
               >
-                <span className="text-2xl">in</span>
-                <span className="text-xl group-hover:underline decoration-foreground/30 underline-offset-4 tracking-tight">
+                <span className="text-xl md:text-2xl flex-shrink-0">in</span>
+                <span className="text-sm md:text-xl group-hover:underline decoration-foreground/30 underline-offset-4 tracking-tight break-all">
                   linkedin.com/in/rebeccameganlee
                 </span>
               </a>
@@ -69,10 +69,10 @@ __|          ;     |MM"MM"""""---..._______...--""MM"MM]                   |
               {/* Email */}
               <a 
                 href="mailto:lee.rebec@northeastern.edu" 
-                className="flex items-center gap-4 group cursor-pointer"
+                className="flex items-start md:items-center gap-3 md:gap-4 group cursor-pointer"
               >
-                <span className="text-2xl">✉</span>
-                <span className="text-xl group-hover:underline decoration-foreground/30 underline-offset-4 tracking-tight">
+                <span className="text-xl md:text-2xl flex-shrink-0">✉</span>
+                <span className="text-sm md:text-xl group-hover:underline decoration-foreground/30 underline-offset-4 tracking-tight break-all">
                   lee.rebec@northeastern.edu
                 </span>
               </a>
@@ -80,19 +80,18 @@ __|          ;     |MM"MM"""""---..._______...--""MM"MM]                   |
           </div>
 
           {/* Terminal Window Decoration */}
-          <div className="w-full max-w-md border border-foreground/20 rounded-sm bg-foreground/5 overflow-hidden shadow-2xl">
-            <div className="bg-foreground/10 px-4 py-2 flex justify-between border-b border-foreground/20">
+          <div className="w-full border border-foreground/20 rounded-sm bg-foreground/5 overflow-hidden shadow-2xl">
+            <div className="bg-foreground/10 px-3 md:px-4 py-2 flex justify-between border-b border-foreground/20">
               <div className="flex gap-1.5">
                 <div className="w-2 h-2 rounded-full border border-foreground/30" />
                 <div className="w-2 h-2 rounded-full border border-foreground/30" />
                 <div className="w-2 h-2 rounded-full border border-foreground/30" />
               </div>
-              <span className="text-[10px] opacity-40 uppercase tracking-widest">Console.sh</span>
+              <span className="text-[8px] md:text-[10px] opacity-40 uppercase tracking-widest">Console.sh</span>
             </div>
-            <div className="p-6 text-[12px] leading-relaxed opacity-70">
-              <p className="text-[#3cd404]">{`> ping rebecca-lee.com`}</p>
-              <p>64 bytes from rebecca-lee.com: icmp_seq=1 ttl=64 time=0.042 ms</p>
-              <p>64 bytes from rebecca-lee.com: icmp_seq=2 ttl=64 time=0.038 ms</p>
+            <div className="p-3 md:p-6 text-[11px] md:text-[12px] leading-relaxed opacity-70">
+              <p className="text-[#3cd404]">{`> a bit more about me`}</p>
+              <p>I’m a CS student at Northeastern University who loves building things that are both smart and aesthetic. My work spans everything from game development to exploring machine learning algorithms, but my favorite part of the process is turning complex logic into seamless experiences. I believe that good technology should be as human-centric as it is functional. Outside of school and late-night debugging sessions, I love food and art. Don't hesitate to reach out!</p>
               <p className="mt-2">--- rebecca-lee.com ping statistics ---</p>
               <p>Status: Online & Ready to Work</p>
             </div>

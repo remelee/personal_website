@@ -88,7 +88,7 @@ export default function ProjectsPage() {
               <div className="flex justify-center">
                 <button 
                   onClick={() => setSelectedProject(project)}
-                  className="px-2 md:px-4 py-1 border border-foreground/40 rounded-full text-[8px] md:text-[10px] tracking-widest uppercase hover:bg-foreground hover:text-background transition-all touch-target"
+                  className="px-2 md:px-7 py-1 border border-foreground/40 rounded-full text-[8px] md:text-[10px] tracking-widest uppercase hover:bg-foreground hover:text-background transition-all touch-target"
                 >
                   Open
                 </button>

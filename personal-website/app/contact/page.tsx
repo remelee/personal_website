@@ -91,7 +91,7 @@ __|          ;     |MM"MM"""""---..._______...--""MM"MM]                   |
             </div>
             <div className="p-3 md:p-6 text-[11px] md:text-[12px] leading-relaxed opacity-70">
               <p className="text-[#3cd404]">{`> a bit more about me`}</p>
-              <p>I’m a CS student at Northeastern University who loves building things that are both smart and aesthetic. My work spans everything from game development to exploring machine learning algorithms, but my favorite part of the process is turning complex logic into seamless experiences. I believe that good technology should be as human-centric as it is functional. Outside of school and late-night debugging sessions, I love food and art. Don't hesitate to reach out!</p>
+              <p>I&apos;m a CS student at Northeastern University who loves building things that are both smart and aesthetic. My work spans everything from game development to exploring machine learning algorithms, but my favorite part of the process is turning complex logic into seamless experiences. I believe that good technology should be as human-centric as it is functional. Outside of school and late-night debugging sessions, I love food and art. Don&apos;t hesitate to reach out!</p>
               <p className="mt-2">--- rebecca-lee.com ping statistics ---</p>
               <p>Status: Online & Ready to Work</p>
             </div>

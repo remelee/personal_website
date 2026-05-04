@@ -5,39 +5,50 @@ import { useState } from "react";
 import Image from 'next/image';
 
 const PROJECTS = [
-  { id: "01", 
-    name: "Dementia detection model evaluation", 
-    start: "Nov 2024", end: "Dec 2024", 
-    slug: "dementia", 
-    skills: "Python, TensorFlow, scikit-learn, Matplotlib, NLTK", 
-    description: "Worked in a team of four to develop models predicting dementia from transcriptions of people describing a picture. "
-    + "The data was labeled by whether the speaker had dementia. We trained and compared logistic regression, SVM, feed-forward neural networks, "
-    + "and BERT models, evaluating through precision, recall, F1, and accuracy. We then visualized it using Matplotlib."
-    + " We observed that a Bag of Words (BoW) embedding outperformed other approaches, supporting our hypothesis that dementia patients tend to "
-    + "be more repetitive, thus this can be effectively captured by BoW.", 
+  { id: "00", name: "Hotel Review Sentiment Analysis", start: "Mar 2026", end: "Apr 2026", slug: "hotel",
+    skills: "Python, scikit-learn, matplotlib, pytorch",
+    description: "Analyzed hotel review sentiment as a binary classification problem using a Booking.com dataset of ~26,000 reviews, labeling ratings ≥ 8 as positive. Used TF-IDF text features alongside a custom cleanliness score for domain-specific signal. I trained Naive Bayes and Feedforward Neural Network models and compared them with Logistic Regression, SVM, and an ensemble of all four. All models achieved 83 - 86% accuracy; We found that simpler linear models matched or outperformed the neural network and noted that TF-IDF's lack of semantic context creates a performance ceiling across all approaches.",
+    image: "/hotel.png", },
+  { id: "01", name: "GameNite", start: "Jan 2026", end: "Apr 2026", slug: "gamenite",
+    skills: "React, Typescript, Node.js, Express, Socket.io, REST, MongoDB, Zod, Vitest, Jest, Playwright",
+    description: "GameNite is a full-stack web app featuring Nim, Number Guesser, and Uno with social and customization features. I redesigned the UI, added dark mode, overhauled the profile page, implemented messaging, and built a coin system with an in-app store for cosmetics.",
+    image: "/gamenite.png", 
+    siteUrl: "https://gamenite-609.onrender.com/" },
+  { id: "02", name: "Hot Chocolate Stand", start: "Mar 2026", end: "Apr 2026", slug: "hotcocoa",
+    skills: "Unity, C#",
+    description: "Hot Chocolate Stand is a game where you manage a stand while competing against an AI rival. I developed the customer and reputation systems, and helped tune the adversary's behavior.",
+    image: "/hotcocoa.png", 
+    siteUrl: "https://lilytengoku.itch.io/hot-chocolate-stand" },
+  { id: "03", 
+    name: "Song Similarity", 
+    start: "Feb 2026", end: "Mar 2026", 
+    slug: "song", 
+    skills: "Python, PyTorch, scikit-learn", 
+    description: "Collaborated on a three-approach music recommendation system trained on 106,000 songs from the Free Music Archive. I implemented an unsupervised LSTM autoencoder that learns compressed song representations from 518 audio features (MFCCs, chroma, spectral statistics, etc.) across 7 time steps, without requiring genre labels. Achieved a 51% genre hit rate on similarity search (8x above the random baseline). We evaluated models using silhouette score, weighted F1, and cosine similarity. I also built a Gradio web demo for real-time song similarity search with infrastructure shared across all three approaches.",
+    image: "/song.png" },
+  { id: "04",
+    name: "Dementia Detection Model Evaluation",
+    start: "Nov 2024", end: "Dec 2024",
+    slug: "dementia",
+    skills: "Python, TensorFlow, scikit-learn, Matplotlib, NLTK",
+    description: "Worked in a team of four to build models predicting dementia from transcriptions of patients describing a picture. Trained and compared logistic regression, SVM, feedforward neural networks, and BERT models, evaluating on precision, recall, F1, and accuracy. Found that Bag of Words (BoW) embeddings outperformed other approaches, supporting our hypothesis that dementia patients tend to use more repetitive language, which is a pattern BoW captures well.",
     image: "/dementiaStat.png" },
-  { id: "02", name: "Stock simulator", start: "Jun 2024", end: "Jun 2024", slug: "stock", skills: "Java, APIs, File I/O, GUI/CLI development, MVC architecture", 
-    description: "Developed a stock trading simulator in Java with CLI and GUI interfaces, with Alpha Vantage API integration following" 
-    + " an MVC architecture. Implemented real-time stock data retrieval allowing users to make transactions, as well as capabilities to" 
-    + " manage, save, and load a stock portfolio.", 
+  { id: "05", name: "Stock Simulator", start: "Jun 2024", end: "Jun 2024", slug: "stock", skills: "Java, APIs, File I/O, GUI/CLI development, MVC architecture",
+    description: "Developed a stock trading simulator with both CLI and GUI interfaces, following MVC architecture and integrating the Alpha Vantage API for real-time stock data. Implemented transaction support and portfolio management with save and load functionality.",
     image: "/stock.png" },
-  { id: "03", name: "Ocean awareness", start: "Feb 2024", end: "Feb 2024", slug: "ocean", 
-    skills: "React, Typescript, SCSS, Next.js", 
-    description: "Participated in HackBeanpot and created a functional informational website about the oceans in under 48 hours using "
-    + "React, Typescript, SCSS, and Next.js. Developed a dynamic frontend experience featuring smooth fade-in effects and scroll snapping"
-    + " to create an engaging user experience, and successfully deployed the site.", 
+  { id: "06", name: "Ocean Awareness", start: "Feb 2024", end: "Feb 2024", slug: "ocean",
+    skills: "React, Typescript, SCSS, Next.js",
+    description: "Built an informational website about ocean conservation at HackBeanpot in under 48 hours. Created a dynamic frontend with smooth fade-in effects and scroll snapping for an engaging experience, and deployed the finished site.",
     image: "/oceans.png", 
     siteUrl: "https://ocean-awareness.vercel.app/" },
-  { id: "04", name: "Crescent", start: "Oct 2024", end: "Dec 2023", slug: "crescent", skills: "React, JavaScript, CSS, HTML, Firebase", 
-    description: "Led frontend development to build a stylized website using React, JavaScript, CSS, and HTML that resembles popular" 
-    + " dating apps with profile creation, swiping, and messaging features, as part of an Agile team. Incorporated Firebase for backend"
-    + " storage and instant data synchronization of user profiles ", 
+  { id: "07", name: "Crescent", start: "Oct 2024", end: "Dec 2023", slug: "crescent", skills: "React, JavaScript, CSS, HTML, Firebase",
+    description: "Led frontend development on an Agile team to build a dating app-style website with profile creation, swiping, and messaging features. Integrated Firebase for backend storage and real-time synchronization of user data.",
     image: "/crescent.png", videoUrl: "https://www.youtube.com/watch?v=evrzhJGlR6Q" },
 ];
 
-const SKILLS = "Python, Java, C/C++, HTML/CSS, JavaScript, LaTeX, Bash, SQL, Assembly";
+const SKILLS = "Python, Java, HTML/CSS, JavaScript, C/C++, C#, LaTeX, Bash, SQL, Assembly";
 const FRAMEWORKS = " React, Node.js, NumPy, Pandas, TensorFlow, PyTorch, Scikit-learn, Keras, Matplotlib";
-const TECH = " Git, Kubernetes, Datadog, Postman, Google Cloud Platform, Docker, Jupyter Notebook, VS Code, IntelliJ IDEA"
+const TECH = " Git, Kubernetes, Datadog, Postman, Google Cloud Platform, Docker, MongoDB, Unity, Unreal Engine 5, Jupyter Notebook, VS Code, IntelliJ IDEA"
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -47,7 +58,7 @@ export default function ProjectsPage() {
       <Header />
 
       {/* 1. Skills Marquee Section */}
-      <div className="mt-24 md:mt-52 border-t border-b border-foreground/20 py-2 overflow-hidden flex whitespace-nowrap">
+      <div className="mt-24 md:mt-32 lg:mt-40 border-t border-b border-foreground/20 py-2 overflow-hidden flex whitespace-nowrap">
         <div className="flex animate-marquee">
           {[0, 1, 2].map((i) => (
             <span key={i} className="mx-2 md:mx-4 text-[10px] md:text-sm tracking-widest uppercase text-[#3cd404]">
@@ -115,10 +126,10 @@ export default function ProjectsPage() {
             </button>
 
             {/* Left Column: Image/Diagram */}
-            <div className="w-full md:w-1/2 md:border-r border-foreground/10 border-b md:border-b-0 p-6 md:p-12 flex flex-col justify-center">
+            <div className="w-full max-h-[40vh] md:max-h-none md:w-2/5 md:border-r border-foreground/10 border-b md:border-b-0 p-4 md:p-8 flex flex-col justify-center overflow-hidden">
               <h3 className="text-xl underline underline-offset-8 mb-8">Results:</h3>
-              
-              <div className="bg-white p-4 rounded-sm relative">
+
+              <div className="bg-white dark:bg-black p-4 rounded-sm relative">
                 {selectedProject.image ? (
                   <div className="relative w-full aspect-[4/3]">
                     <Image 
@@ -139,7 +150,7 @@ export default function ProjectsPage() {
             </div>
 
             {/* Right Column: Info */}
-            <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto">
+            <div className="w-full md:w-3/5 p-6 md:p-12 overflow-y-auto">
               <h2 className="text-4xl font-twinkle leading-tight mb-8">
                 {selectedProject.name}
               </h2>

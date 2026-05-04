@@ -29,7 +29,7 @@ jgs     ~^ -_ ~^^ -_ ~ _ - _ ~^~-  _~ -_   ~- _ ~^ _ -  ~ ^-
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-48 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
         <div className="max-w-2xl text-xl md:text-4xl leading-relaxed font-mono">
           I&apos;m Rebecca. A{" "}
-          <span className="underline decoration-1 underline-offset-4 md:underline-offset-8">junior</span> at 
+          <span className="underline decoration-1 underline-offset-4 md:underline-offset-8">senior</span> at 
           Northeastern studying{" "}
           <span className="underline decoration-1 underline-offset-4 md:underline-offset-8">computer science</span> with a 
           concentration in{" "}

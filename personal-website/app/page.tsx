@@ -1,4 +1,5 @@
 import Header from "./header";
+import TypewriterIntro from "./typewriter-intro";
 
 export default function Home() {
   const asciiArt = `          ^^                                       ..
@@ -27,17 +28,21 @@ jgs     ~^ -_ ~^^ -_ ~ _ - _ ~^~-  _~ -_   ~- _ ~^ _ -  ~ ^-
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-48 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
-        <div className="max-w-2xl text-xl md:text-4xl leading-relaxed font-mono">
-          I&apos;m Rebecca. A{" "}
-          <span className="underline decoration-1 underline-offset-4 md:underline-offset-8">senior</span> at 
-          Northeastern studying{" "}
-          <span className="underline decoration-1 underline-offset-4 md:underline-offset-8">computer science</span> with a 
-          concentration in{" "}
-          <span className="underline decoration-1 underline-offset-4 md:underline-offset-8">artificial intelligence</span>.
-        </div>
+        <TypewriterIntro
+          className="max-w-2xl text-xl md:text-4xl leading-relaxed font-mono"
+          segments={[
+            { text: "I’m Rebecca. A " },
+            { text: "senior", underline: true },
+            { text: " at Northeastern studying " },
+            { text: "computer science", underline: true },
+            { text: " with a concentration in " },
+            { text: "artificial intelligence", underline: true },
+            { text: "." },
+          ]}
+        />
 
         <div className="text-right font-mono space-y-4 pt-2 text-sm md:text-base">
-          <div className="tracking-widest uppercase text-xs md:text-sm">[Status: Open to Work]</div>
+          <div className="tracking-widest uppercase text-xs md:text-sm text-[#0aa30a]">[Status: Looking for full-time]</div>
           <a 
             href="/RebeccaLeeResume.pdf" 
             target="_blank" 
@@ -47,15 +52,11 @@ jgs     ~^ -_ ~^^ -_ ~ _ - _ ~^~-  _~ -_   ~- _ ~^ _ -  ~ ^-
           </a>
         </div>
       </div>
-      {/* Animated ASCII Section */}
       <div className="relative w-full mt-16 md:mt-32 border-t border-foreground/10 pt-8 md:pt-12 overflow-hidden pointer-events-none">
-        {/* Gradient Masks */}
         <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />
         <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />
-        
-        {/* The Container - 'flex' keeps them in one line, 'w-max' prevents wrapping */}
+
         <div className="flex w-max animate-marquee">
-          {/* Render 5 copies to ensure coverage on all screen sizes */}
           {[0, 1, 2, 3, 4].map((i) => (
             <pre key={i} className="font-mono text-[6px] md:text-[10px] leading-none opacity-50 px-0 whitespace-pre">
               {asciiArt}

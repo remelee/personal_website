@@ -24,7 +24,7 @@ export default function Header() {
       ">
         
         {/* Name */}
-        <Link className="text-2xl md:text-5xl font-display" href="/">
+        <Link className="glitch text-2xl md:text-5xl font-display" href="/" data-text="Rebecca Lee">
           Rebecca Lee
         </Link>
         
